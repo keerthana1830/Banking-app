@@ -1,5 +1,6 @@
 package org.example;
 
+import java.sql.Connection;
 import java.time.LocalDateTime;
 import java.util.Scanner;
 
@@ -79,6 +80,8 @@ public class Main {
     }
 
     public static void main(String[] args) {
+        MyConnection connection = new MyConnection();
+        Connection databaseConnection = connection.establishConnection();
         Scanner scanner = new Scanner(System.in);
         Bank bank = new Bank();
         bank.setName("SBI");

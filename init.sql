@@ -50,3 +50,5 @@ CREATE TABLE Transaction (
     FOREIGN KEY (transferredToAccountId) REFERENCES Account(accountId)
 );
 
+
+-- Reference : https://dev.mysql.com/doc/connector-j/en/connector-j-usagenotes-basic.html
