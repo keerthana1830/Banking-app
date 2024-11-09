@@ -1,3 +1,7 @@
+-- create database bank_app;
+
+use bank_app;
+
 CREATE TABLE Bank (
     bankId INT AUTO_INCREMENT PRIMARY KEY,
     ifscCode VARCHAR(20) UNIQUE NOT NULL,
@@ -27,13 +31,14 @@ CREATE TABLE Customer (
 );
 
 CREATE TABLE Account (
-    accountId SERIAL PRIMARY KEY,
+    accountId INT auto_increment PRIMARY KEY,
     aadhaarNumber VARCHAR(12),
     accountNumber VARCHAR(50) UNIQUE NOT NULL,
     accountType VARCHAR(20),
     balance BIGINT DEFAULT 0,
     FOREIGN KEY (aadhaarNumber) REFERENCES Customer(aadhaarNumber)
 );
+
 
 CREATE TABLE Transaction (
     transactionId VARCHAR(50) PRIMARY KEY,
@@ -44,3 +49,4 @@ CREATE TABLE Transaction (
     FOREIGN KEY (transferredFromAccountId) REFERENCES Account(accountId),
     FOREIGN KEY (transferredToAccountId) REFERENCES Account(accountId)
 );
+
