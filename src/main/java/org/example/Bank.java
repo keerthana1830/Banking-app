@@ -123,9 +123,17 @@ public class Bank implements CustomerOperation {
 
         this.customerList.add(customer);
         System.out.println("Account created successfully");
+        System.out.println("Your Account number: " + account.getAccountNumber());
     }
 
-    public Customer fetchCustomerDetails(String accountNumber) {
+        public Customer fetchCustomerDetails(String accountNumber) {
+        for (int i=0; i<customerList.size(); i++) {
+            for (Account account: customerList.get(i).getAccounts()) {
+                if (account.getAccountNumber().equals(accountNumber)) {
+                    return customerList.get(i);
+                }
+            }
+        }
         return null;
     }
     public void blockAccount() {

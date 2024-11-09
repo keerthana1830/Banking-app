@@ -132,4 +132,22 @@ public class Customer implements CustomerOperation {
     public boolean login(String username, String password) {
         return false;
     }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "aadhaarNumber='" + aadhaarNumber + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", panCard='" + panCard + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                ", totalCashback=" + totalCashback +
+                ", address='" + address + '\'' +
+                ", guardianName='" + guardianName + '\'' +
+                ", guardianPhoneNumber='" + guardianPhoneNumber + '\'' +
+                ", password='" + password + '\'' +
+                ", accounts=" + accounts +
+                '}';
+    }
 }

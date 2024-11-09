@@ -28,6 +28,7 @@ public class Main {
         System.out.println("6. Logout");
         System.out.println("7. Close the application");
         System.out.println("8. Update Bank Account");
+        System.out.println("9. Get Customer details");
     }
 
     private static void onSuccessLogin(Scanner scanner, Bank bank) {
@@ -55,6 +56,9 @@ public class Main {
                 System.exit(0);
             } else if (bankChoice == 8) {
                 bank.updateAccount();
+            } else if (bankChoice == 9) {
+                String accountNumber = scanner.nextLine();
+                System.out.println(bank.fetchCustomerDetails(accountNumber));
             }
         }
     }
