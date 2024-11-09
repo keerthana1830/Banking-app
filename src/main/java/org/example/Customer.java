@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Customer implements CustomerOperation {
@@ -14,7 +15,7 @@ public class Customer implements CustomerOperation {
     private String guardianName;
     private String guardianPhoneNumber;
     private String password;
-    private List<Account> accounts;
+    private List<Account> accounts = new ArrayList<>();
 
     public String getAadhaarNumber() {
         return aadhaarNumber;

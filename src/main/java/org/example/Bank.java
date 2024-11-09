@@ -122,6 +122,11 @@ public class Bank implements CustomerOperation {
         customer.getAccounts().add(account);
 
         this.customerList.add(customer);
+        System.out.println("Account created successfully");
+    }
+
+    public Customer fetchCustomerDetails(String accountNumber) {
+        return null;
     }
     public void blockAccount() {
 
