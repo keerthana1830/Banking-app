@@ -5,7 +5,7 @@ import java.util.List;
 public class Account {
     private String accountNumber;
     private AccountType type;
-    private String balance;
+    private double balance;
     private List<Transaction> transactionHistory;
 
     public String getAccountNumber() {
@@ -24,11 +24,11 @@ public class Account {
         this.type = type;
     }
 
-    public String getBalance() {
+    public double getBalance() {
         return balance;
     }
 
-    public void setBalance(String balance) {
+    public void setBalance(double balance) {
         this.balance = balance;
     }
 

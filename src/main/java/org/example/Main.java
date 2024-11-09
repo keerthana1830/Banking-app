@@ -35,8 +35,9 @@ public class Main {
         while(true) {
             bankOptions();
             int bankChoice = scanner.nextInt();
+            scanner.nextLine();
             if (bankChoice == 0) {
-                bank.createAccount();
+                bank.createAccount(scanner);
             }
             if (bankChoice == 1) {
                 bank.deposit();

@@ -1,10 +1,12 @@
 package org.example;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Bank implements CustomerOperation {
-    private List<Customer> customerList;
+    private List<Customer> customerList = new ArrayList<>();
     private String ifscCode;
     private String branch;
     private String name;
@@ -83,8 +85,43 @@ public class Bank implements CustomerOperation {
         this.branch = branch;
     }
 
-    public void createAccount() {
+    public void createAccount(Scanner scanner) {
+        System.out.println("Enter first name: ");
+        String firstName = scanner.nextLine();
+        System.out.println("Enter last Name: ");
+        String lastName = scanner.nextLine();
+        System.out.println("Enter Aadhar number: ");
+        String aadharNumber = scanner.nextLine();
+        System.out.println("Enter PAN number: ");
+        String panNumber = scanner.nextLine();
+        System.out.println("Enter Email: ");
+        String email = scanner.nextLine();
+        System.out.println("Enter Phone Number: ");
+        String phoneNumber = scanner.nextLine();
+        System.out.println("Enter user password");
+        String password = scanner.nextLine();
 
+
+        // Create Customer
+        Customer customer = new Customer();
+        customer.setFirstName(firstName);
+        customer.setLastName(lastName);
+        customer.setAadhaarNumber(aadharNumber);
+        customer.setPanCard(panNumber);
+        customer.setEmail(email);
+        customer.setPhoneNumber(phoneNumber);
+        customer.setPassword(password);
+
+        // Create Account
+        Account account = new Account();
+        account.setBalance(1000);
+        account.setType(AccountType.SAVINGS);
+        account.setAccountNumber(firstName+lastName+panNumber);
+
+        // bind accoun to customer
+        customer.getAccounts().add(account);
+
+        this.customerList.add(customer);
     }
     public void blockAccount() {
 
