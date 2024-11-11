@@ -6,12 +6,11 @@ import java.sql.SQLException;
 
 public class MyConnection {
     Connection establishConnection() {
-        Connection conn = null;
+        Connection connect = null;
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bank_app?" +
-                            "user=root");
-            System.out.println("Connection establisted...");
-            return conn;
+            connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/bank_app", "root", "root");
+            System.out.println("Connection established...");
+            return connect;
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());

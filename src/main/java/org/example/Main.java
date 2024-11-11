@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.time.LocalDateTime;
 import java.util.Scanner;
 
-public class Main {
+public class Main{
 
     private static void softwareDescription() {
         System.out.println("================================");
